@@ -238,13 +238,8 @@ h3 {
   border-radius: 6px;
   box-shadow: var(--profile-shadow);
   border: 1px solid var(--profile-border);
-  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
   display: block;
   margin: 0 auto;
-}
-
-.profile-img:hover {
-  transform: scale(1.02);
 }
 
 /* List styling */
