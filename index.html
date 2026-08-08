@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <title>Dohun Kim (김도훈) - CV</title>
@@ -7,8 +7,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="stylesheet.css">
 
-  <!-- 자동 레이아웃 최적화 스크립트 (이미지 미존재 시 줄글 전환 및 빈 링크 자동 숨김) -->
+  <!-- 다크모드 및 레이아웃 최적화 스크립트 -->
   <script type="text/javascript">
+    // 다크모드 초기화 및 토글 로직
+    (function() {
+      var savedTheme = localStorage.getItem('theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    })();
+
+    function toggleTheme() {
+      var current = document.documentElement.getAttribute('data-theme');
+      var target = current === 'light' ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', target);
+      localStorage.setItem('theme', target);
+      updateThemeButton(target);
+    }
+
+    function updateThemeButton(theme) {
+      var btn = document.getElementById('theme-toggle-text');
+      if (btn) {
+        btn.textContent = theme === 'light' ? '🌙 Dark' : '☀️ Light';
+      }
+    }
+
     function handleThumbError(img) {
       var thumbCell = img.closest('.item-thumb-col');
       if (thumbCell) {
@@ -43,7 +64,10 @@
     }
 
     document.addEventListener('DOMContentLoaded', function() {
-      // 1. 빈 이미지 자동 감지
+      var currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+      updateThemeButton(currentTheme);
+
+      // 빈 이미지 자동 감지 및 줄글 전환
       document.querySelectorAll('img').forEach(function(img) {
         var src = img.getAttribute('src');
         if (!src || src === '' || src === '#') {
@@ -57,7 +81,7 @@
         }
       });
 
-      // 2. 빈 링크(# 또는 빈 href) 자동 정리
+      // 빈 링크(# 또는 빈 href) 자동 정리
       document.querySelectorAll('.paper-links').forEach(function(container) {
         var links = container.querySelectorAll('a');
         var validCount = 0;
@@ -79,6 +103,11 @@
 
 <body>
   <div class="container">
+    <!-- Dark/Light Mode Toggle Button -->
+    <button class="theme-toggle-btn" onclick="toggleTheme()" aria-label="Toggle dark mode">
+      <span id="theme-toggle-text">☀️ Light</span>
+    </button>
+
     <!-- ==================== HEADER & PROFILE ==================== -->
     <table class="profile-table" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
       <tbody>
@@ -87,7 +116,7 @@
             <p class="name">
               Dohun Kim
             </p>
-            <p style="text-align:center; color:#555; margin-bottom: 12px;">
+            <p style="text-align:center; color:var(--text-muted); margin-bottom: 12px;">
               Seoul, Republic of Korea &nbsp;|&nbsp;
               <a href="mailto:dohunkim2@skku.edu">dohunkim2@skku.edu</a> &nbsp;|&nbsp;
               <a href="tel:+82-10-7164-3648">+82-10-7164-3648</a>
@@ -137,7 +166,7 @@
                 <tr class="two-col-row">
                   <td style="vertical-align:top;width:75%;">
                     <strong>Sungkyunkwan University (SKKU)</strong>, Seoul, Korea<br>
-                    <span style="color:#555;">Overall GPA: <strong>4.2 / 4.5</strong></span>
+                    <span style="color:var(--text-muted);">Overall GPA: <strong>4.2 / 4.5</strong></span>
                   </td>
                   <td class="two-col-right" style="vertical-align:top;width:25%;text-align:right;">
                     <span class="date-label">Feb. 2023 &ndash; Present</span>
@@ -150,7 +179,7 @@
                 <tbody>
                   <tr class="two-col-row">
                     <td style="vertical-align:top;width:75%;">
-                      &bull; B.S. in Computer Education <span style="color:#555;">(GPA: 4.39 / 4.5)</span>
+                      &bull; B.S. in Computer Education <span style="color:var(--text-muted);">(GPA: 4.39 / 4.5)</span>
                     </td>
                     <td class="two-col-right" style="vertical-align:top;width:25%;text-align:right;">
                       <span class="date-label">Feb. 2023 &ndash; Present</span>
@@ -158,7 +187,7 @@
                   </tr>
                   <tr class="two-col-row">
                     <td style="vertical-align:top;width:75%;">
-                      &bull; B.S. in Applied Artificial Intelligence <span style="color:#555;">(GPA: 4.27 / 4.5)</span>
+                      &bull; B.S. in Applied Artificial Intelligence <span style="color:var(--text-muted);">(GPA: 4.27 / 4.5)</span>
                     </td>
                     <td class="two-col-right" style="vertical-align:top;width:25%;text-align:right;">
                       <span class="date-label">Jul. 2024 &ndash; Present</span>
@@ -188,7 +217,7 @@
         <tr class="two-col-row">
           <td style="vertical-align:top;width:75%;">
             <strong>B.S./M.S. Integrated Program Student</strong>, Data & Language Intelligence Lab (SKKU), Seoul, Korea<br>
-            <span style="color:#555;">Advised by Prof. Yunseok Choi</span>
+            <span style="color:var(--text-muted);">Advised by Prof. Yunseok Choi</span>
           </td>
           <td class="two-col-right" style="vertical-align:top;width:25%;text-align:right;">
             <span class="date-label">Sep. 2026 &ndash; Present</span>
@@ -198,7 +227,7 @@
         <tr class="two-col-row">
           <td style="vertical-align:top;width:75%;">
             <strong>Undergraduate Research Intern</strong>, Data & Language Intelligence Lab (SKKU), Seoul, Korea<br>
-            <span style="color:#555;">Advised by Prof. Yunseok Choi</span>
+            <span style="color:var(--text-muted);">Advised by Prof. Yunseok Choi</span>
           </td>
           <td class="two-col-right" style="vertical-align:top;width:25%;text-align:right;">
             <span class="date-label">Mar. 2025 &ndash; Aug. 2026</span>
@@ -208,7 +237,7 @@
         <tr class="two-col-row">
           <td style="vertical-align:top;width:75%;">
             <strong>Undergraduate Research Intern</strong>, Multimedia Computing Systems Lab (SKKU), Seoul, Korea<br>
-            <span style="color:#555;">Advised by Prof. Eunseok Ryu</span>
+            <span style="color:var(--text-muted);">Advised by Prof. Eunseok Ryu</span>
           </td>
           <td class="two-col-right" style="vertical-align:top;width:25%;text-align:right;">
             <span class="date-label">Jul. 2024 &ndash; Feb. 2025</span>
@@ -223,7 +252,7 @@
         <tr>
           <td style="padding:10px 0;width:100%;vertical-align:middle">
             <h2>Publications</h2>
-            <p style="margin-top:4px; color:#555; font-size:13.5px;">&dagger; indicates corresponding author.</p>
+            <p style="margin-top:4px; color:var(--text-muted); font-size:13.5px;">&dagger; indicates corresponding author.</p>
           </td>
         </tr>
       </tbody>
