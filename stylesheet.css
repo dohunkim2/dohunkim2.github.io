@@ -1,0 +1,289 @@
+/* Google Fonts - Lato */
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400;1,700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  color: #333333;
+  font-family: 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-size: 14.5px;
+  line-height: 1.55;
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: 820px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 30px 20px;
+}
+
+/* Links */
+a {
+  color: #1772d0;
+  text-decoration: none;
+  transition: color 0.15s ease-in-out;
+}
+
+a:focus,
+a:hover {
+  color: #d97706;
+  text-decoration: underline;
+}
+
+/* Table styles */
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+td, th, tr, p, li {
+  font-family: 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-size: 14.5px;
+  line-height: 1.55;
+}
+
+strong {
+  font-family: 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-size: 14.5px;
+  font-weight: 700;
+  color: #111;
+}
+
+/* Headings */
+h2 {
+  margin: 26px 0 10px 0;
+  padding-bottom: 4px;
+  font-weight: 700;
+  font-family: 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-size: 19px;
+  color: #111;
+  border-bottom: 1.5px solid #eaeaea;
+}
+
+h3 {
+  margin: 14px 0 6px 0;
+  font-size: 15px;
+  font-weight: 700;
+  color: #222;
+}
+
+/* Typography elements */
+.name {
+  padding-top: 5px;
+  margin: 0 0 8px 0;
+  font-family: 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  color: #111;
+  text-align: center;
+}
+
+.papertitle {
+  font-family: 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #1772d0;
+}
+
+.papertitle:hover {
+  color: #d97706;
+}
+
+/* Publication & Project Items */
+.item-table {
+  width: 100%;
+}
+
+.pub-entry, .project-entry {
+  margin-bottom: 12px;
+}
+
+/* 줄글(Text-only) 리스트 형태 스타일 */
+ol.pub-text-list {
+  margin: 6px 0 14px 0;
+  padding-left: 22px;
+}
+
+ol.pub-text-list > li {
+  margin-bottom: 12px;
+  line-height: 1.55;
+}
+
+/* Image Hover Animation (.one & .two) - PNG/JPG 지원 */
+.one {
+  width: 160px;
+  height: 110px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+  border: 1px solid #eaeaea;
+  background-color: #f8f9fa;
+  margin: 0 auto;
+}
+
+.two {
+  width: 160px;
+  height: 110px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity .25s ease-in-out;
+  -webkit-transition: opacity .25s ease-in-out;
+}
+
+.one img, .two img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.one:hover .two {
+  opacity: 1;
+}
+
+/* Single static thumbnail */
+.thumb-box {
+  width: 160px;
+  height: 110px;
+  overflow: hidden;
+  border-radius: 4px;
+  border: 1px solid #eaeaea;
+  background-color: #f8f9fa;
+  margin: 0 auto;
+}
+
+.thumb-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Column Transitions */
+.item-thumb-col {
+  transition: all 0.2s ease-in-out;
+}
+
+.item-desc-col {
+  transition: all 0.2s ease-in-out;
+}
+
+/* Profile Photo */
+.profile-img-container {
+  text-align: center;
+  padding: 5px;
+}
+
+.profile-img {
+  width: 100%;
+  max-width: 190px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.07);
+  border: 1px solid #eee;
+  transition: transform 0.2s ease-in-out;
+  display: block;
+  margin: 0 auto;
+}
+
+.profile-img:hover {
+  transform: scale(1.02);
+}
+
+/* List styling */
+ol.cv-list, ul.cv-list {
+  margin: 6px 0 12px 0;
+  padding-left: 20px;
+}
+
+ol.cv-list li, ul.cv-list li {
+  margin-bottom: 8px;
+}
+
+/* Sub-items */
+.sub-entry {
+  padding-left: 14px;
+  color: #444;
+  margin-top: 3px;
+  margin-bottom: 6px;
+}
+
+/* Item date & badge */
+.date-label {
+  color: #666;
+  font-size: 13.5px;
+  white-space: nowrap;
+}
+
+.paper-links {
+  margin-top: 3px;
+  font-size: 13.5px;
+}
+
+/* Footer */
+.footer {
+  margin-top: 40px;
+  padding-top: 15px;
+  border-top: 1px solid #eaeaea;
+  text-align: center;
+  font-size: 12px;
+  color: #888;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 650px) {
+  .profile-table tr {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .profile-col-text, .profile-col-img {
+    width: 100% !important;
+    max-width: 100% !important;
+    display: block !important;
+  }
+  .profile-img {
+    max-width: 140px;
+    margin-bottom: 15px;
+  }
+  .item-table tr {
+    display: flex;
+    flex-direction: column;
+  }
+  .item-thumb-col {
+    width: 100% !important;
+    display: block !important;
+    margin-bottom: 8px;
+  }
+  .item-desc-col {
+    width: 100% !important;
+    display: block !important;
+    padding-left: 0 !important;
+  }
+  .one, .two, .thumb-box {
+    width: 100%;
+    max-width: 220px;
+    height: 130px;
+  }
+  .two-col-row {
+    display: flex;
+    flex-direction: column;
+  }
+  .two-col-right {
+    text-align: left !important;
+    margin-top: 2px;
+    margin-bottom: 6px;
+  }
+}

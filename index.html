@@ -1,0 +1,571 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Dohun Kim (김도훈) - CV</title>
+  <meta name="author" content="Dohun Kim">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+
+  <!-- 이미지 미존재 시 깨진 박스 없이 깔끔한 줄글(100% 텍스트) 형태로 자동 전환하는 스크립트 -->
+  <script type="text/javascript">
+    function handleThumbError(img) {
+      var thumbCell = img.closest('.item-thumb-col');
+      if (thumbCell) {
+        thumbCell.style.display = 'none';
+        var row = thumbCell.parentElement;
+        var descCell = row.querySelector('.item-desc-col');
+        if (descCell) {
+          descCell.style.width = '100%';
+          descCell.style.padding = '4px 0';
+        }
+      }
+    }
+
+    function handleProfileError(img) {
+      var profileCol = img.closest('.profile-col-img');
+      if (profileCol) {
+        profileCol.style.display = 'none';
+        var row = profileCol.parentElement;
+        var textCol = row.querySelector('.profile-col-text');
+        if (textCol) {
+          textCol.style.width = '100%';
+          textCol.style.maxWidth = '100%';
+        }
+      }
+    }
+
+    function handleHoverError(img) {
+      var twoDiv = img.closest('.two');
+      if (twoDiv) {
+        twoDiv.style.display = 'none';
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('img').forEach(function(img) {
+        var src = img.getAttribute('src');
+        if (!src || src === '' || src === '#') {
+          if (img.classList.contains('profile-img')) {
+            handleProfileError(img);
+          } else if (img.closest('.two')) {
+            handleHoverError(img);
+          } else {
+            handleThumbError(img);
+          }
+        }
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <div class="container">
+    <!-- ==================== HEADER & PROFILE ==================== -->
+    <table class="profile-table" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+      <tbody>
+        <tr style="padding:0px">
+          <td class="profile-col-text" style="padding:10px;width:70%;vertical-align:middle">
+            <p class="name">
+              Dohun Kim
+            </p>
+            <p style="text-align:center; color:#555; margin-bottom: 12px;">
+              Seoul, Republic of Korea &nbsp;|&nbsp;
+              <a href="mailto:dohunkim2@skku.edu">dohunkim2@skku.edu</a> &nbsp;|&nbsp;
+              <a href="tel:+82-10-7164-3648">+82-10-7164-3648</a>
+            </p>
+            <p>
+              Undergraduate researcher at <strong>Sungkyunkwan University</strong> pursuing B.S. degrees in Computer Education and Applied Artificial Intelligence. My research interests include multimodal large language models, visual reasoning, information retrieval, and reliable AI.
+            </p>
+            <p style="text-align:center; margin-top: 14px;">
+              <a href="mailto:dohunkim2@skku.edu">Email</a> &nbsp;/&nbsp;
+              <!-- CV PDF 다운로드 (data/cv.pdf 파일 저장 시 자동 연결) -->
+              <a href="data/cv.pdf" target="_blank">CV</a> &nbsp;/&nbsp;
+              <!-- Google Scholar URL 입력 -->
+              <a href="#" target="_blank">Scholar</a> &nbsp;/&nbsp;
+              <a href="https://www.linkedin.com/in/dhkim2321" target="_blank">LinkedIn</a> &nbsp;/&nbsp;
+              <a href="https://github.com/dohunkim2" target="_blank">GitHub</a>
+            </p>
+          </td>
+          <td class="profile-col-img" style="padding:10px;width:30%;max-width:30%;vertical-align:middle;">
+            <!-- 프로필 사진: png, jpg 등 지원 (사진이 없으면 이 영역은 자동으로 사라지고 텍스트가 전체 너비로 확장됩니다) -->
+            <div class="profile-img-container">
+              <a href="images/profile/profile.png">
+                <img class="profile-img" alt="Dohun Kim profile photo" src="images/profile/profile.png" onerror="handleProfileError(this)">
+              </a>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- ==================== EDUCATION ==================== -->
+    <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+      <tbody>
+        <tr>
+          <td style="padding:10px 0;width:100%;vertical-align:middle">
+            <h2>Education</h2>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+      <tbody>
+        <tr>
+          <td style="padding:4px 0;vertical-align:top;">
+            <table style="width:100%;border:0px;">
+              <tbody>
+                <tr class="two-col-row">
+                  <td style="vertical-align:top;width:75%;">
+                    <strong>Sungkyunkwan University (SKKU)</strong>, Seoul, Korea<br>
+                    <span style="color:#555;">Overall GPA: <strong>4.2 / 4.5</strong></span>
+                  </td>
+                  <td class="two-col-right" style="vertical-align:top;width:25%;text-align:right;">
+                    <span class="date-label">Feb. 2023 &ndash; Present</span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="sub-entry">
+              <table style="width:100%;border:0px;">
+                <tbody>
+                  <tr class="two-col-row">
+                    <td style="vertical-align:top;width:75%;">
+                      &bull; B.S. in Computer Education <span style="color:#555;">(GPA: 4.39 / 4.5)</span>
+                    </td>
+                    <td class="two-col-right" style="vertical-align:top;width:25%;text-align:right;">
+                      <span class="date-label">Feb. 2023 &ndash; Present</span>
+                    </td>
+                  </tr>
+                  <tr class="two-col-row">
+                    <td style="vertical-align:top;width:75%;">
+                      &bull; B.S. in Applied Artificial Intelligence <span style="color:#555;">(GPA: 4.27 / 4.5)</span>
+                    </td>
+                    <td class="two-col-right" style="vertical-align:top;width:25%;text-align:right;">
+                      <span class="date-label">Jul. 2024 &ndash; Present</span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- ==================== EXPERIENCE ==================== -->
+    <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+      <tbody>
+        <tr>
+          <td style="padding:10px 0;width:100%;vertical-align:middle">
+            <h2>Experience</h2>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <table style="width:100%;border:0px;border-spacing:0px 8px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+      <tbody>
+        <!-- Exp 1 -->
+        <tr class="two-col-row">
+          <td style="vertical-align:top;width:75%;">
+            <strong>B.S./M.S. Integrated Program Student</strong>, Data & Language Intelligence Lab (SKKU), Seoul, Korea<br>
+            <span style="color:#555;">Advised by Prof. Yunseok Choi</span>
+          </td>
+          <td class="two-col-right" style="vertical-align:top;width:25%;text-align:right;">
+            <span class="date-label">Sep. 2026 &ndash; Present</span>
+          </td>
+        </tr>
+        <!-- Exp 2 -->
+        <tr class="two-col-row">
+          <td style="vertical-align:top;width:75%;">
+            <strong>Undergraduate Research Intern</strong>, Data & Language Intelligence Lab (SKKU), Seoul, Korea<br>
+            <span style="color:#555;">Advised by Prof. Yunseok Choi</span>
+          </td>
+          <td class="two-col-right" style="vertical-align:top;width:25%;text-align:right;">
+            <span class="date-label">Mar. 2025 &ndash; Aug. 2026</span>
+          </td>
+        </tr>
+        <!-- Exp 3 -->
+        <tr class="two-col-row">
+          <td style="vertical-align:top;width:75%;">
+            <strong>Undergraduate Research Intern</strong>, Multimedia Computing Systems Lab (SKKU), Seoul, Korea<br>
+            <span style="color:#555;">Advised by Prof. Eunseok Ryu</span>
+          </td>
+          <td class="two-col-right" style="vertical-align:top;width:25%;text-align:right;">
+            <span class="date-label">Jul. 2024 &ndash; Feb. 2025</span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- ==================== PUBLICATIONS ==================== -->
+    <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+      <tbody>
+        <tr>
+          <td style="padding:10px 0;width:100%;vertical-align:middle">
+            <h2>Publications</h2>
+            <p style="margin-top:4px; color:#555; font-size:13.5px;">&dagger; indicates corresponding author.</p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- International Conference -->
+    <h3 style="margin-top:10px;">International Conference</h3>
+    <table class="item-table" style="width:100%;border:0px;border-spacing:0px 12px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+      <tbody>
+        <!-- CIKM 2026 -->
+        <!-- 이미지 넣을 때: images/publications/cikm2026/preview.png (또는 .jpg)를 넣으면 사진이 나오고, 없으면 자동으로 깔끔한 줄글로 나옵니다 -->
+        <tr onmouseout="cikm26_stop()" onmouseover="cikm26_start()">
+          <td class="item-thumb-col" style="padding:6px 12px 6px 0;width:22%;vertical-align:middle">
+            <div class="one">
+              <div class="two" id="cikm26_image">
+                <img src="images/publications/cikm2026/hover.png" alt="CIKM 2026 hover" onerror="handleHoverError(this)">
+              </div>
+              <img src="images/publications/cikm2026/preview.png" alt="CIKM 2026 preview" onerror="handleThumbError(this)">
+            </div>
+            <script type="text/javascript">
+              function cikm26_start() {
+                var el = document.getElementById('cikm26_image');
+                if (el) el.style.opacity = "1";
+              }
+              function cikm26_stop() {
+                var el = document.getElementById('cikm26_image');
+                if (el) el.style.opacity = "0";
+              }
+              cikm26_stop();
+            </script>
+          </td>
+          <td class="item-desc-col" style="padding:4px 0;width:78%;vertical-align:middle">
+            <a href="#" target="_blank">
+              <span class="papertitle">First News Report Retrieval for Short-Form Videos</span>
+            </a>
+            <br>
+            Kyutae Kim, <strong>Dohun Kim</strong>, Taesoo Park, Yunseok Choi&dagger;
+            <br>
+            <em>ACM International Conference on Information and Knowledge Management (CIKM)</em>, 2026
+            <div class="paper-links">
+              <a href="#" target="_blank">[Project Page]</a> /
+              <a href="#" target="_blank">[Paper]</a> /
+              <a href="#" target="_blank">[Code]</a> /
+              <a href="#" target="_blank">[arXiv]</a>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Domestic Conference -->
+    <h3 style="margin-top:18px;">Domestic Conference</h3>
+    <table class="item-table" style="width:100%;border:0px;border-spacing:0px 12px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+      <tbody>
+        <!-- CKAIA 2026 -->
+        <!-- 이미지 넣을 때: images/publications/ckaia2026/preview.png (또는 .jpg) -->
+        <tr onmouseout="ckaia26_stop()" onmouseover="ckaia26_start()">
+          <td class="item-thumb-col" style="padding:6px 12px 6px 0;width:22%;vertical-align:middle">
+            <div class="one">
+              <div class="two" id="ckaia26_image">
+                <img src="images/publications/ckaia2026/hover.png" alt="CKAIA 2026 hover" onerror="handleHoverError(this)">
+              </div>
+              <img src="images/publications/ckaia2026/preview.png" alt="CKAIA 2026 preview" onerror="handleThumbError(this)">
+            </div>
+            <script type="text/javascript">
+              function ckaia26_start() {
+                var el = document.getElementById('ckaia26_image');
+                if (el) el.style.opacity = "1";
+              }
+              function ckaia26_stop() {
+                var el = document.getElementById('ckaia26_image');
+                if (el) el.style.opacity = "0";
+              }
+              ckaia26_stop();
+            </script>
+          </td>
+          <td class="item-desc-col" style="padding:4px 0;width:78%;vertical-align:middle">
+            <a href="#" target="_blank">
+              <span class="papertitle">A Dataset for Visually Grounded Question Answering in Infographic Chart Understanding</span>
+            </a>
+            <br>
+            <strong>Dohun Kim</strong>, Yunseok Choi&dagger;
+            <br>
+            <em>Summer Conference of the Korean Artificial Intelligence Association (CKAIA)</em>, 2026
+            <div class="paper-links">
+              <a href="#" target="_blank">[Paper]</a> /
+              <a href="#" target="_blank">[Dataset]</a> /
+              <a href="#" target="_blank">[Code]</a>
+            </div>
+          </td>
+        </tr>
+
+        <!-- CKAIA 2025 -->
+        <!-- 이미지 넣을 때: images/publications/ckaia2025/preview.png (또는 .jpg) -->
+        <tr onmouseout="ckaia25_stop()" onmouseover="ckaia25_start()">
+          <td class="item-thumb-col" style="padding:6px 12px 6px 0;width:22%;vertical-align:middle">
+            <div class="one">
+              <div class="two" id="ckaia25_image">
+                <img src="images/publications/ckaia2025/hover.png" alt="CKAIA 2025 hover" onerror="handleHoverError(this)">
+              </div>
+              <img src="images/publications/ckaia2025/preview.png" alt="CKAIA 2025 preview" onerror="handleThumbError(this)">
+            </div>
+            <script type="text/javascript">
+              function ckaia25_start() {
+                var el = document.getElementById('ckaia25_image');
+                if (el) el.style.opacity = "1";
+              }
+              function ckaia25_stop() {
+                var el = document.getElementById('ckaia25_image');
+                if (el) el.style.opacity = "0";
+              }
+              ckaia25_stop();
+            </script>
+          </td>
+          <td class="item-desc-col" style="padding:4px 0;width:78%;vertical-align:middle">
+            <a href="#" target="_blank">
+              <span class="papertitle">Examining Visual Grounding in Multimodal Large Language Models under Commonsense Conflict</span>
+            </a>
+            <br>
+            <strong>Dohun Kim</strong>, Neungjoo Kwon, Yunseok Choi&dagger;
+            <br>
+            <em>Summer Conference of the Korean Artificial Intelligence Association (CKAIA)</em>, 2025
+            <div class="paper-links">
+              <a href="#" target="_blank">[Paper]</a> /
+              <a href="#" target="_blank">[Code]</a>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- ==================== HONORS & AWARDS ==================== -->
+    <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+      <tbody>
+        <tr>
+          <td style="padding:10px 0;width:100%;vertical-align:middle">
+            <h2>Honors and Awards</h2>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <table style="width:100%;border:0px;border-spacing:0px 10px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+      <tbody>
+        <!-- Award 1 -->
+        <tr class="two-col-row">
+          <td style="vertical-align:top;width:80%;">
+            <strong>Grand Prize (1st place)</strong> | 2025 SKKU AI Hackathon<br>
+            <em>Awarded by Sungkyunkwan University (SKKU)</em>
+            <div class="sub-entry" style="margin-top:2px;">
+              Developed a multi-agent system to assist visually impaired users.
+            </div>
+          </td>
+          <td class="two-col-right" style="vertical-align:top;width:20%;text-align:right;">
+            <span class="date-label">Oct. 2025</span>
+          </td>
+        </tr>
+        <!-- Award 2 -->
+        <tr class="two-col-row">
+          <td style="vertical-align:top;width:80%;">
+            <strong>Grand Prize (1st place)</strong> | 2024 Data Secure Zone Utilization Joint Competition<br>
+            <em>Awarded by the Ministry of Science and ICT (Ministerial Award)</em>
+            <div class="sub-entry" style="margin-top:2px;">
+              Proposed statistically driven solutions to address Seoul's parking challenges using private-sector data.
+            </div>
+          </td>
+          <td class="two-col-right" style="vertical-align:top;width:20%;text-align:right;">
+            <span class="date-label">Nov. 2024</span>
+          </td>
+        </tr>
+        <!-- Award 3 -->
+        <tr class="two-col-row">
+          <td style="vertical-align:top;width:80%;">
+            <strong>Silver Prize (3rd place)</strong> | 2024 SKKU AI Hackathon<br>
+            <em>Awarded by Sungkyunkwan University (SKKU)</em>
+            <div class="sub-entry" style="margin-top:2px;">
+              Developed a real-time video question answering system using RTMP streaming for visually impaired users.
+            </div>
+          </td>
+          <td class="two-col-right" style="vertical-align:top;width:20%;text-align:right;">
+            <span class="date-label">Oct. 2024</span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- ==================== STANDARDS & PATENTS ==================== -->
+    <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+      <tbody>
+        <tr>
+          <td style="padding:10px 0;width:100%;vertical-align:middle">
+            <h2>Standards and Patents</h2>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <h3 style="margin-top:10px;">Standards</h3>
+    <ol class="cv-list">
+      <li>
+        Jun Young Jeong, Gun Bang (ETRI), Blazej Szydelko (PUT), <strong>Do-Hun Kim</strong>, Jong-Beom Jeong (SKKU),
+        <em>"[GSC][JEE6.2] Summary of MIV anchor generation,"</em> document MPEG2025/m71473, 149th MPEG meeting of ISO/IEC JTC1/SC29/WG07, Geneva, Jan. 2025.
+      </li>
+      <li>
+        Jong-Beom Jeong, Yeong-Gyu Kim, Reagan Koo, <strong>Do-Hun Kim</strong>, Jun-Hyeong Park, Jaeyeol Choi, Eunseok Ryu,
+        <em>"[INVR][EE3] Report on EE3: MIV DSDE Anchor Generation on VRroom1D,"</em> document MPEG2024/m69525, 148th MPEG meeting of ISO/IEC JTC1/SC29/WG04, Kemer, Oct. 2024.
+      </li>
+    </ol>
+
+    <!-- ==================== PROJECTS ==================== -->
+    <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+      <tbody>
+        <tr>
+          <td style="padding:10px 0;width:100%;vertical-align:middle">
+            <h2>Projects</h2>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <table class="item-table" style="width:100%;border:0px;border-spacing:0px 10px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+      <tbody>
+        <!-- Project 1 -->
+        <!-- 이미지 넣을 때: images/projects/knpa2025/preview.png (또는 .jpg)를 넣으면 썸네일 표시, 없으면 깔끔한 줄글 표시 -->
+        <tr>
+          <td class="item-thumb-col" style="padding:6px 12px 6px 0;width:22%;vertical-align:middle">
+            <div class="thumb-box">
+              <img src="images/projects/knpa2025/preview.png" alt="KNPA Project" onerror="handleThumbError(this)">
+            </div>
+          </td>
+          <td class="item-desc-col" style="padding:4px 0;width:78%;vertical-align:middle">
+            <span class="papertitle">Development of System for Detecting Manipulated and Deceptive Content</span>
+            <br>
+            <span class="date-label">Apr. 2025 &ndash; Present</span>
+            <br>
+            <em>Funded by the Police Science Institute under the Korean National Police Agency (KNPA)</em>
+          </td>
+        </tr>
+
+        <!-- Project 2 -->
+        <!-- 이미지 넣을 때: images/projects/etri2024/preview.png (또는 .jpg) -->
+        <tr>
+          <td class="item-thumb-col" style="padding:6px 12px 6px 0;width:22%;vertical-align:middle">
+            <div class="thumb-box">
+              <img src="images/projects/etri2024/preview.png" alt="ETRI Project" onerror="handleThumbError(this)">
+            </div>
+          </td>
+          <td class="item-desc-col" style="padding:4px 0;width:78%;vertical-align:middle">
+            <span class="papertitle">Investigation of MPEG 3D Space Video Compression Technology and Performance Comparative Analysis</span>
+            <br>
+            <span class="date-label">Sep. 2024 &ndash; Dec. 2024</span>
+            <br>
+            <em>Funded by ETRI (Electronics and Telecommunications Research Institute)</em>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- ==================== SKILLS ==================== -->
+    <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+      <tbody>
+        <tr>
+          <td style="padding:10px 0;width:100%;vertical-align:middle">
+            <h2>Skills</h2>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <table style="width:100%;border:0px;border-spacing:0px 6px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+      <tbody>
+        <tr>
+          <td style="padding:2px 0;">
+            <strong>Programming & Systems</strong> &nbsp;|&nbsp; Python, C/C++, Git, Linux, shell scripting
+          </td>
+        </tr>
+        <tr>
+          <td style="padding:2px 0;">
+            <strong>Machine Learning</strong> &nbsp;|&nbsp; PyTorch, deep learning, multimodal/Vision-Language Models
+          </td>
+        </tr>
+        <tr>
+          <td style="padding:2px 0;">
+            <strong>Research</strong> &nbsp;|&nbsp; Information retrieval, visual reasoning, model evaluation, data analysis
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- ==================== TEACHING EXPERIENCE ==================== -->
+    <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+      <tbody>
+        <tr>
+          <td style="padding:10px 0;width:100%;vertical-align:middle">
+            <h2>Teaching Experience</h2>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <table style="width:100%;border:0px;border-spacing:0px 6px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+      <tbody>
+        <!-- TA 1 -->
+        <tr class="two-col-row">
+          <td style="vertical-align:top;width:75%;">
+            <strong>Teaching Assistant (T.A.)</strong> &nbsp;|&nbsp; <em>Academic Writing in Social Sciences Using Python, SKKU</em>
+          </td>
+          <td class="two-col-right" style="vertical-align:top;width:25%;text-align:right;">
+            <span class="date-label">Summer 2026</span>
+          </td>
+        </tr>
+        <!-- Practicum -->
+        <tr class="two-col-row">
+          <td style="vertical-align:top;width:75%;">
+            <strong>Student Teacher (Teaching Practicum)</strong> &nbsp;|&nbsp; <em>Programming (C), Sunrin Internet High School</em>
+          </td>
+          <td class="two-col-right" style="vertical-align:top;width:25%;text-align:right;">
+            <span class="date-label">May &ndash; Jun. 2026</span>
+          </td>
+        </tr>
+        <!-- TA 2 -->
+        <tr class="two-col-row">
+          <td style="vertical-align:top;width:75%;">
+            <strong>Teaching Assistant (T.A.)</strong> &nbsp;|&nbsp; <em>The Fundamentals of Data Analytics, SKKU</em>
+          </td>
+          <td class="two-col-right" style="vertical-align:top;width:25%;text-align:right;">
+            <span class="date-label">Fall 2025</span>
+          </td>
+        </tr>
+        <!-- TA 3 -->
+        <tr class="two-col-row">
+          <td style="vertical-align:top;width:75%;">
+            <strong>Teaching Assistant (T.A.)</strong> &nbsp;|&nbsp; <em>Academic Writing in Social Sciences Using Python, SKKU</em>
+          </td>
+          <td class="two-col-right" style="vertical-align:top;width:25%;text-align:right;">
+            <span class="date-label">Summer 2025</span>
+          </td>
+        </tr>
+        <!-- TA 4 -->
+        <tr class="two-col-row">
+          <td style="vertical-align:top;width:75%;">
+            <strong>Teaching Assistant (T.A.)</strong> &nbsp;|&nbsp; <em>The Fundamentals of Data Analytics, SKKU</em>
+          </td>
+          <td class="two-col-right" style="vertical-align:top;width:25%;text-align:right;">
+            <span class="date-label">Spring 2025</span>
+          </td>
+        </tr>
+        <!-- TA 5 -->
+        <tr class="two-col-row">
+          <td style="vertical-align:top;width:75%;">
+            <strong>Teaching Assistant (T.A.)</strong> &nbsp;|&nbsp; <em>The Fundamentals of Data Analytics, SKKU</em>
+          </td>
+          <td class="two-col-right" style="vertical-align:top;width:25%;text-align:right;">
+            <span class="date-label">Winter 2024</span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- ==================== FOOTER ==================== -->
+    <div class="footer">
+      <p>
+        Design & template adapted from <a href="https://github.com/jonbarron/jonbarron.github.io" target="_blank">Jon Barron</a>'s website.
+      </p>
+    </div>
+
+  </div>
+</body>
+</html>
