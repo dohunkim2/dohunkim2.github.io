@@ -2,20 +2,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400;1,700&display=swap');
 
 :root {
-  /* Default: Sleek Dark Mode */
-  --bg-color: #0f172a;
-  --text-color: #e2e8f0;
-  --text-muted: #94a3b8;
-  --heading-color: #f8fafc;
-  --border-color: #334155;
-  --link-color: #60a5fa;
+  /* Default: Pure Matte Black OLED Dark Mode (완전한 블랙 테마) */
+  --bg-color: #000000;
+  --text-color: #e5e5e5;
+  --text-muted: #8e8e93;
+  --heading-color: #ffffff;
+  --border-color: #222222;
+  --link-color: #58a6ff;
   --link-hover-color: #fbbf24;
-  --card-bg: #1e293b;
-  --profile-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
-  --profile-border: #334155;
-  --btn-bg: #1e293b;
-  --btn-border: #475569;
-  --btn-color: #f8fafc;
+  --card-bg: #111111;
+  --profile-shadow: 0 4px 24px rgba(255, 255, 255, 0.06);
+  --profile-border: #2e2e2e;
+  --btn-bg: #161616;
+  --btn-border: #333333;
+  --btn-color: #ffffff;
 }
 
 [data-theme="light"] {
@@ -28,10 +28,10 @@
   --link-hover-color: #d97706;
   --card-bg: #f8f9fa;
   --profile-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  --profile-border: #eee;
+  --profile-border: #eeeeee;
   --btn-bg: #f1f5f9;
   --btn-border: #cbd5e1;
-  --btn-color: #334155;
+  --btn-color: #333333;
 }
 
 * {
@@ -46,7 +46,7 @@ body {
   font-family: 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   font-size: 14.5px;
   line-height: 1.6;
-  transition: background-color 0.25s ease, color 0.25s ease;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 /* Container */
@@ -76,7 +76,7 @@ body {
   align-items: center;
   gap: 6px;
   transition: all 0.2s ease;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
 }
 
 .theme-toggle-btn:hover {
@@ -128,7 +128,7 @@ h2 {
   font-size: 19.5px;
   color: var(--heading-color);
   border-bottom: 1.5px solid var(--border-color);
-  transition: border-color 0.25s ease, color 0.25s ease;
+  transition: border-color 0.2s ease, color 0.2s ease;
 }
 
 h3 {
@@ -284,53 +284,83 @@ ol.cv-list li, ul.cv-list li {
   color: var(--text-muted);
 }
 
-/* Responsive adjustments */
+/* ==================== GLOBAL DISPLAY OVERRIDES ==================== */
+.item-thumb-col[style*="display: none"],
+.profile-col-img[style*="display: none"],
+.is-hidden {
+  display: none !important;
+}
+
+/* ==================== MOBILE RESPONSIVE OPTIMIZATION ==================== */
 @media screen and (max-width: 650px) {
+  .container {
+    padding: 25px 16px 40px 16px;
+  }
   .theme-toggle-btn {
-    top: 10px;
-    right: 10px;
-    padding: 4px 8px;
+    top: 15px;
+    right: 15px;
+    padding: 4px 10px;
     font-size: 12px;
   }
+  .name {
+    font-size: 26px;
+  }
+
+  /* Profile Header */
   .profile-table tr {
     display: flex;
     flex-direction: column-reverse;
   }
-  .profile-col-text, .profile-col-img {
+  .profile-col-text {
     width: 100% !important;
     max-width: 100% !important;
     display: block !important;
+    padding: 0 !important;
+  }
+  .profile-col-img:not([style*="display: none"]) {
+    width: 100% !important;
+    max-width: 100% !important;
+    display: block !important;
+    padding: 0 0 15px 0 !important;
   }
   .profile-img {
     max-width: 140px;
-    margin-bottom: 15px;
   }
-  .item-table tr {
+
+  /* Publication & Project Items on Mobile */
+  /* 이미지가 있는 항목만 세로 배치 */
+  .item-table tr:has(.item-thumb-col:not([style*="display: none"])) {
     display: flex;
     flex-direction: column;
+    margin-bottom: 12px;
   }
-  .item-thumb-col {
+  .item-thumb-col:not([style*="display: none"]) {
     width: 100% !important;
     display: block !important;
-    margin-bottom: 8px;
+    padding: 0 0 8px 0 !important;
   }
   .item-desc-col {
     width: 100% !important;
     display: block !important;
-    padding-left: 0 !important;
+    padding: 2px 0 !important;
   }
+
   .one, .two, .thumb-box {
     width: 100%;
-    max-width: 220px;
+    max-width: 240px;
     height: 130px;
+    margin: 0 auto;
   }
+
+  /* 2-column list row */
   .two-col-row {
     display: flex;
     flex-direction: column;
+    margin-bottom: 6px;
   }
   .two-col-right {
     text-align: left !important;
-    margin-top: 2px;
-    margin-bottom: 6px;
+    margin-top: 1px;
+    margin-bottom: 4px;
   }
 }
