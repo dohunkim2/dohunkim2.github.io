@@ -229,12 +229,12 @@ h3 {
 
 .profile-img {
   width: 100%;
-  max-width: 190px;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  border-radius: 50%;
+  max-width: 220px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 6px;
   box-shadow: var(--profile-shadow);
-  border: 2px solid var(--profile-border);
+  border: 1px solid var(--profile-border);
   transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
   display: block;
   margin: 0 auto;
@@ -324,7 +324,7 @@ ol.cv-list li, ul.cv-list li {
     padding: 0 0 15px 0 !important;
   }
   .profile-img {
-    max-width: 140px;
+    max-width: 170px;
   }
 
   /* Publication & Project Items on Mobile */
