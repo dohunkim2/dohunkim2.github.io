@@ -3,7 +3,7 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>Dohun Kim (김도훈) - CV</title>
+  <title>Dohun Kim (김도훈)</title>
   <meta name="author" content="Dohun Kim">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="stylesheet.css">
@@ -68,8 +68,8 @@
     function handleThumbError(img) {
       var folder = img.getAttribute('data-folder');
       if (folder) {
-        var candidates = thumbCandidateNames.map(function(n) { return folder + '/' + n; });
-        tryCandidates(img, candidates, function() {
+        var candidates = thumbCandidateNames.map(function (n) { return folder + '/' + n; });
+        tryCandidates(img, candidates, function () {
           var thumbCell = img.closest('.item-thumb-col');
           if (thumbCell) {
             thumbCell.classList.add('is-hidden');
@@ -98,7 +98,7 @@
     }
 
     function handleProfileError(img) {
-      tryCandidates(img, profileCandidates, function() {
+      tryCandidates(img, profileCandidates, function () {
         var profileCol = img.closest('.profile-col-img');
         if (profileCol) {
           profileCol.classList.add('is-hidden');
@@ -116,8 +116,8 @@
     function handleHoverError(img) {
       var folder = img.getAttribute('data-folder');
       if (folder) {
-        var candidates = hoverCandidateNames.map(function(n) { return folder + '/' + n; });
-        tryCandidates(img, candidates, function() {
+        var candidates = hoverCandidateNames.map(function (n) { return folder + '/' + n; });
+        tryCandidates(img, candidates, function () {
           var twoDiv = img.closest('.two');
           if (twoDiv) {
             twoDiv.classList.add('is-hidden');
@@ -210,8 +210,8 @@
           <td class="profile-col-img" style="padding:10px;width:30%;max-width:30%;vertical-align:middle;">
             <!-- 프로필 사진: images/profile/ 폴더에 이미지를 넣으면 표시되며, 없으면 자동으로 전체 너비 텍스트로 전환됩니다 -->
             <div class="profile-img-container">
-              <img class="profile-img" data-folder="images/profile" alt="Dohun Kim profile photo" src="images/profile/image.png"
-                onerror="handleProfileError(this)">
+              <img class="profile-img" data-folder="images/profile" alt="Dohun Kim profile photo"
+                src="images/profile/image.png" onerror="handleProfileError(this)">
             </div>
           </td>
         </tr>
@@ -355,11 +355,11 @@
           <td class="item-thumb-col" style="padding:6px 12px 6px 0;width:22%;vertical-align:middle">
             <div class="one">
               <div class="two" id="cikm26_image">
-                <img data-folder="images/publications/cikm2026" src="images/publications/cikm2026/hover.png" alt="CIKM 2026 hover"
-                  onerror="handleHoverError(this)">
+                <img data-folder="images/publications/cikm2026" src="images/publications/cikm2026/hover.png"
+                  alt="CIKM 2026 hover" onerror="handleHoverError(this)">
               </div>
-              <img data-folder="images/publications/cikm2026" src="images/publications/cikm2026/preview.png" alt="CIKM 2026 preview"
-                onerror="handleThumbError(this)">
+              <img data-folder="images/publications/cikm2026" src="images/publications/cikm2026/preview.png"
+                alt="CIKM 2026 preview" onerror="handleThumbError(this)">
             </div>
             <script type="text/javascript">
               function cikm26_start() {
@@ -394,11 +394,11 @@
           <td class="item-thumb-col" style="padding:6px 12px 6px 0;width:22%;vertical-align:middle">
             <div class="one">
               <div class="two" id="ckaia26_image">
-                <img data-folder="images/publications/ckaia2026" src="images/publications/ckaia2026/hover.png" alt="CKAIA 2026 hover"
-                  onerror="handleHoverError(this)">
+                <img data-folder="images/publications/ckaia2026" src="images/publications/ckaia2026/hover.png"
+                  alt="CKAIA 2026 hover" onerror="handleHoverError(this)">
               </div>
-              <img data-folder="images/publications/ckaia2026" src="images/publications/ckaia2026/preview.png" alt="CKAIA 2026 preview"
-                onerror="handleThumbError(this)">
+              <img data-folder="images/publications/ckaia2026" src="images/publications/ckaia2026/preview.png"
+                alt="CKAIA 2026 preview" onerror="handleThumbError(this)">
             </div>
             <script type="text/javascript">
               function ckaia26_start() {
@@ -427,11 +427,11 @@
           <td class="item-thumb-col" style="padding:6px 12px 6px 0;width:22%;vertical-align:middle">
             <div class="one">
               <div class="two" id="ckaia25_image">
-                <img data-folder="images/publications/ckaia2025" src="images/publications/ckaia2025/hover.png" alt="CKAIA 2025 hover"
-                  onerror="handleHoverError(this)">
+                <img data-folder="images/publications/ckaia2025" src="images/publications/ckaia2025/hover.png"
+                  alt="CKAIA 2025 hover" onerror="handleHoverError(this)">
               </div>
-              <img data-folder="images/publications/ckaia2025" src="images/publications/ckaia2025/preview.png" alt="CKAIA 2025 preview"
-                onerror="handleThumbError(this)">
+              <img data-folder="images/publications/ckaia2025" src="images/publications/ckaia2025/preview.png"
+                alt="CKAIA 2025 preview" onerror="handleThumbError(this)">
             </div>
             <script type="text/javascript">
               function ckaia25_start() {
@@ -513,32 +513,6 @@
       </tbody>
     </table>
 
-    <!-- ==================== STANDARDS & PATENTS ==================== -->
-    <table
-      style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-      <tbody>
-        <tr>
-          <td style="padding:10px 0;width:100%;vertical-align:middle">
-            <h2>Standards and Patents</h2>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    <h3 style="margin-top:10px;">Standards</h3>
-    <ol class="cv-list">
-      <li>
-        Jun Young Jeong, Gun Bang (ETRI), Blazej Szydelko (PUT), <strong>Do-Hun Kim</strong>, Jong-Beom Jeong (SKKU),
-        <em>"[GSC][JEE6.2] Summary of MIV anchor generation,"</em> document MPEG2025/m71473, 149th MPEG meeting of
-        ISO/IEC JTC1/SC29/WG07, Geneva, Jan. 2025.
-      </li>
-      <li>
-        Jong-Beom Jeong, Yeong-Gyu Kim, Reagan Koo, <strong>Do-Hun Kim</strong>, Jun-Hyeong Park, Jaeyeol Choi, Eunseok
-        Ryu,
-        <em>"[INVR][EE3] Report on EE3: MIV DSDE Anchor Generation on VRroom1D,"</em> document MPEG2024/m69525, 148th
-        MPEG meeting of ISO/IEC JTC1/SC29/WG04, Kemer, Oct. 2024.
-      </li>
-    </ol>
-
     <!-- ==================== PROJECTS ==================== -->
     <table
       style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
@@ -557,7 +531,8 @@
         <tr>
           <td class="item-thumb-col" style="padding:6px 12px 6px 0;width:22%;vertical-align:middle">
             <div class="thumb-box">
-              <img data-folder="images/projects/knpa2025" src="images/projects/knpa2025/preview.png" alt="KNPA Project" onerror="handleThumbError(this)">
+              <img data-folder="images/projects/knpa2025" src="images/projects/knpa2025/preview.png" alt="KNPA Project"
+                onerror="handleThumbError(this)">
             </div>
           </td>
           <td class="item-desc-col" style="padding:4px 0;width:78%;vertical-align:middle">
@@ -573,7 +548,8 @@
         <tr>
           <td class="item-thumb-col" style="padding:6px 12px 6px 0;width:22%;vertical-align:middle">
             <div class="thumb-box">
-              <img data-folder="images/projects/etri2024" src="images/projects/etri2024/preview.png" alt="ETRI Project" onerror="handleThumbError(this)">
+              <img data-folder="images/projects/etri2024" src="images/projects/etri2024/preview.png" alt="ETRI Project"
+                onerror="handleThumbError(this)">
             </div>
           </td>
           <td class="item-desc-col" style="padding:4px 0;width:78%;vertical-align:middle">
@@ -694,6 +670,32 @@
         </tr>
       </tbody>
     </table>
+
+    <!-- ==================== STANDARDS & PATENTS ==================== -->
+    <table
+      style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+      <tbody>
+        <tr>
+          <td style="padding:10px 0;width:100%;vertical-align:middle">
+            <h2>Standards and Patents</h2>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <h3 style="margin-top:10px;">Standards</h3>
+    <ol class="cv-list">
+      <li>
+        Jun Young Jeong, Gun Bang (ETRI), Blazej Szydelko (PUT), <strong>Do-Hun Kim</strong>, Jong-Beom Jeong (SKKU),
+        <em>"[GSC][JEE6.2] Summary of MIV anchor generation,"</em> document MPEG2025/m71473, 149th MPEG meeting of
+        ISO/IEC JTC1/SC29/WG07, Geneva, Jan. 2025.
+      </li>
+      <li>
+        Jong-Beom Jeong, Yeong-Gyu Kim, Reagan Koo, <strong>Do-Hun Kim</strong>, Jun-Hyeong Park, Jaeyeol Choi, Eunseok
+        Ryu,
+        <em>"[INVR][EE3] Report on EE3: MIV DSDE Anchor Generation on VRroom1D,"</em> document MPEG2024/m69525, 148th
+        MPEG meeting of ISO/IEC JTC1/SC29/WG04, Kemer, Oct. 2024.
+      </li>
+    </ol>
 
     <!-- ==================== FOOTER ==================== -->
     <div class="footer">
