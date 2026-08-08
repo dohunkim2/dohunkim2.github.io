@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="stylesheet.css">
 
-  <!-- 이미지 미존재 시 깨진 박스 없이 깔끔한 줄글(100% 텍스트) 형태로 자동 전환하는 스크립트 -->
+  <!-- 자동 레이아웃 최적화 스크립트 (이미지 미존재 시 줄글 전환 및 빈 링크 자동 숨김) -->
   <script type="text/javascript">
     function handleThumbError(img) {
       var thumbCell = img.closest('.item-thumb-col');
@@ -43,6 +43,7 @@
     }
 
     document.addEventListener('DOMContentLoaded', function() {
+      // 1. 빈 이미지 자동 감지
       document.querySelectorAll('img').forEach(function(img) {
         var src = img.getAttribute('src');
         if (!src || src === '' || src === '#') {
@@ -53,6 +54,23 @@
           } else {
             handleThumbError(img);
           }
+        }
+      });
+
+      // 2. 빈 링크(# 또는 빈 href) 자동 정리
+      document.querySelectorAll('.paper-links').forEach(function(container) {
+        var links = container.querySelectorAll('a');
+        var validCount = 0;
+        links.forEach(function(a) {
+          var href = a.getAttribute('href');
+          if (!href || href === '#' || href === '') {
+            a.remove();
+          } else {
+            validCount++;
+          }
+        });
+        if (validCount === 0) {
+          container.remove();
         }
       });
     });
@@ -79,16 +97,17 @@
             </p>
             <p style="text-align:center; margin-top: 14px;">
               <a href="mailto:dohunkim2@skku.edu">Email</a> &nbsp;/&nbsp;
-              <!-- CV PDF 다운로드 (data/cv.pdf 파일 저장 시 자동 연결) -->
-              <a href="data/cv.pdf" target="_blank">CV</a> &nbsp;/&nbsp;
-              <!-- Google Scholar URL 입력 -->
-              <a href="#" target="_blank">Scholar</a> &nbsp;/&nbsp;
+              <!-- CV PDF 문서: data/cv/ 폴더에서 디렉토리 단위로 관리됩니다 -->
+              <a href="data/cv/CV.pdf" target="_blank">CV</a> &nbsp;/&nbsp;
               <a href="https://www.linkedin.com/in/dhkim2321" target="_blank">LinkedIn</a> &nbsp;/&nbsp;
               <a href="https://github.com/dohunkim2" target="_blank">GitHub</a>
+              <!-- Google Scholar 링크가 생기면 아래 주석을 해제하세요:
+              &nbsp;/&nbsp; <a href="https://scholar.google.com/..." target="_blank">Scholar</a>
+              -->
             </p>
           </td>
           <td class="profile-col-img" style="padding:10px;width:30%;max-width:30%;vertical-align:middle;">
-            <!-- 프로필 사진: png, jpg 등 지원 (사진이 없으면 이 영역은 자동으로 사라지고 텍스트가 전체 너비로 확장됩니다) -->
+            <!-- 프로필 사진: images/profile/ 폴더에 이미지를 넣으면 표시되며, 없으면 자동으로 전체 너비 텍스트로 전환됩니다 -->
             <div class="profile-img-container">
               <a href="images/profile/profile.png">
                 <img class="profile-img" alt="Dohun Kim profile photo" src="images/profile/profile.png" onerror="handleProfileError(this)">
@@ -215,7 +234,6 @@
     <table class="item-table" style="width:100%;border:0px;border-spacing:0px 12px;border-collapse:separate;margin-right:auto;margin-left:auto;">
       <tbody>
         <!-- CIKM 2026 -->
-        <!-- 이미지 넣을 때: images/publications/cikm2026/preview.png (또는 .jpg)를 넣으면 사진이 나오고, 없으면 자동으로 깔끔한 줄글로 나옵니다 -->
         <tr onmouseout="cikm26_stop()" onmouseover="cikm26_start()">
           <td class="item-thumb-col" style="padding:6px 12px 6px 0;width:22%;vertical-align:middle">
             <div class="one">
@@ -237,19 +255,19 @@
             </script>
           </td>
           <td class="item-desc-col" style="padding:4px 0;width:78%;vertical-align:middle">
-            <a href="#" target="_blank">
-              <span class="papertitle">First News Report Retrieval for Short-Form Videos</span>
-            </a>
+            <span class="papertitle">First News Report Retrieval for Short-Form Videos</span>
             <br>
             Kyutae Kim, <strong>Dohun Kim</strong>, Taesoo Park, Yunseok Choi&dagger;
             <br>
             <em>ACM International Conference on Information and Knowledge Management (CIKM)</em>, 2026
+            <!-- 링크가 있을 때 아래 주석을 해제하여 사용하시면 됩니다:
             <div class="paper-links">
-              <a href="#" target="_blank">[Project Page]</a> /
-              <a href="#" target="_blank">[Paper]</a> /
-              <a href="#" target="_blank">[Code]</a> /
-              <a href="#" target="_blank">[arXiv]</a>
+              <a href="https://..." target="_blank">[Project Page]</a>
+              <a href="https://..." target="_blank">[Paper]</a>
+              <a href="https://..." target="_blank">[Code]</a>
+              <a href="https://..." target="_blank">[arXiv]</a>
             </div>
+            -->
           </td>
         </tr>
       </tbody>
@@ -260,7 +278,6 @@
     <table class="item-table" style="width:100%;border:0px;border-spacing:0px 12px;border-collapse:separate;margin-right:auto;margin-left:auto;">
       <tbody>
         <!-- CKAIA 2026 -->
-        <!-- 이미지 넣을 때: images/publications/ckaia2026/preview.png (또는 .jpg) -->
         <tr onmouseout="ckaia26_stop()" onmouseover="ckaia26_start()">
           <td class="item-thumb-col" style="padding:6px 12px 6px 0;width:22%;vertical-align:middle">
             <div class="one">
@@ -282,23 +299,22 @@
             </script>
           </td>
           <td class="item-desc-col" style="padding:4px 0;width:78%;vertical-align:middle">
-            <a href="#" target="_blank">
-              <span class="papertitle">A Dataset for Visually Grounded Question Answering in Infographic Chart Understanding</span>
-            </a>
+            <span class="papertitle">A Dataset for Visually Grounded Question Answering in Infographic Chart Understanding</span>
             <br>
             <strong>Dohun Kim</strong>, Yunseok Choi&dagger;
             <br>
             <em>Summer Conference of the Korean Artificial Intelligence Association (CKAIA)</em>, 2026
+            <!-- 링크 추가 시:
             <div class="paper-links">
-              <a href="#" target="_blank">[Paper]</a> /
-              <a href="#" target="_blank">[Dataset]</a> /
-              <a href="#" target="_blank">[Code]</a>
+              <a href="https://..." target="_blank">[Paper]</a>
+              <a href="https://..." target="_blank">[Dataset]</a>
+              <a href="https://..." target="_blank">[Code]</a>
             </div>
+            -->
           </td>
         </tr>
 
         <!-- CKAIA 2025 -->
-        <!-- 이미지 넣을 때: images/publications/ckaia2025/preview.png (또는 .jpg) -->
         <tr onmouseout="ckaia25_stop()" onmouseover="ckaia25_start()">
           <td class="item-thumb-col" style="padding:6px 12px 6px 0;width:22%;vertical-align:middle">
             <div class="one">
@@ -320,17 +336,17 @@
             </script>
           </td>
           <td class="item-desc-col" style="padding:4px 0;width:78%;vertical-align:middle">
-            <a href="#" target="_blank">
-              <span class="papertitle">Examining Visual Grounding in Multimodal Large Language Models under Commonsense Conflict</span>
-            </a>
+            <span class="papertitle">Examining Visual Grounding in Multimodal Large Language Models under Commonsense Conflict</span>
             <br>
             <strong>Dohun Kim</strong>, Neungjoo Kwon, Yunseok Choi&dagger;
             <br>
             <em>Summer Conference of the Korean Artificial Intelligence Association (CKAIA)</em>, 2025
+            <!-- 링크 추가 시:
             <div class="paper-links">
-              <a href="#" target="_blank">[Paper]</a> /
-              <a href="#" target="_blank">[Code]</a>
+              <a href="https://..." target="_blank">[Paper]</a>
+              <a href="https://..." target="_blank">[Code]</a>
             </div>
+            -->
           </td>
         </tr>
       </tbody>
@@ -425,7 +441,6 @@
     <table class="item-table" style="width:100%;border:0px;border-spacing:0px 10px;border-collapse:separate;margin-right:auto;margin-left:auto;">
       <tbody>
         <!-- Project 1 -->
-        <!-- 이미지 넣을 때: images/projects/knpa2025/preview.png (또는 .jpg)를 넣으면 썸네일 표시, 없으면 깔끔한 줄글 표시 -->
         <tr>
           <td class="item-thumb-col" style="padding:6px 12px 6px 0;width:22%;vertical-align:middle">
             <div class="thumb-box">
@@ -442,7 +457,6 @@
         </tr>
 
         <!-- Project 2 -->
-        <!-- 이미지 넣을 때: images/projects/etri2024/preview.png (또는 .jpg) -->
         <tr>
           <td class="item-thumb-col" style="padding:6px 12px 6px 0;width:22%;vertical-align:middle">
             <div class="thumb-box">
