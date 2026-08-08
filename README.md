@@ -52,14 +52,7 @@ CV_webpage/
 
 ---
 
-## 🚀 GitHub Pages 배포
+## 🚀 배포 정보
 
-```bash
-git init
-git add .
-git commit -m "Setup CV webpage"
-git branch -M main
-git remote add origin https://github.com/dohunkim2/dohunkim2.github.io.git
-git push -u origin main
-```
-GitHub 저장소의 **Settings** > **Pages**에서 `main` 브랜치를 활성화하면 배포가 완료됩니다.
+- 저장소: [https://github.com/dohunkim2/dhkim.github.io](https://github.com/dohunkim2/dhkim.github.io)
+- GitHub 저장소 설정(**Settings** > **Pages**)에서 `Branch: main`을 선택하시면 배포가 활성화됩니다.
